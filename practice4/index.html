@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-Glassmorphism-Cube-Effect</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Helvectica,sans-serif;
+            background: url(https://www.technocrazed.com/wp-content/uploads/2015/12/black-wallpaper-to-set-as-background-28.jpg) no-repeat center;
+            background-size: cover;
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .cube{
+            transform-style: preserve-3d;
+            width: 15em;
+            height: 15em;
+            transform-origin: 7.5em 7.5em;
+            transform: rotateX(36deg)rotateY(-135deg);
+            position: relative;
+            animation: rotateCube 20s linear infinite;
+        }
+        h1{
+            margin: 0;
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 5em;
+            z-index: -1;
+            max-width: 30em;
+            text-align: center;
+            transform: translate3d(-50%,-50%,7.5em);
+            line-height: 1.2;
+        }
+        .face{
+            background: linear-gradient(0deg,rgba(245,66,114,1),rgba(245,66,114,0.5));
+            width: 15em;
+            height: 15em;
+            position: absolute;
+            overflow: hidden;
+            border: 1px #ccc solid;
+            animation: color 10s linear infinite;
+        }
+        .face1{
+            transform: rotateX(90deg) translate3d(0,7.5em,0);
+            transform-origin: bottom;
+        }
+        .face2{
+            transform: translate3d(0,0,7.5em);
+        }
+        .face3{
+            transform: rotateY(90deg) translate3d(-7.5em,0,0);
+            transform-origin: left;
+        }
+        .face4{
+            transform: rotateX(-90deg) translate3d(0,-7.5em,0);
+            transform-origin: top;
+        }
+        .face5{
+            transform: rotateY(-90deg) translate3d(7.5em,0,0);
+            transform-origin: right;
+        }
+        .face6{
+            transform: translate3d(0,0,-7.5em);
+        }
+        @keyframes rotateCube{
+            100%{
+                transform: rotateX(360deg)rotateY(360deg)rotateZ(360deg);
+            }
+        }
+        @keyframes color{
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>3D Glassmorphism Cube Effect</h1>
+        <div class="cube">
+            <div class="face face1"></div>
+            <div class="face face2"></div>
+            <div class="face face3"></div>
+            <div class="face face4"></div>
+            <div class="face face5"></div>
+            <div class="face face6"></div>
+        </div>
+    </div>
+</body>
+</html>
